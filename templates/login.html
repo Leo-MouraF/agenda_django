@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <form action="submit" method="POST">{% csrf_token %}
+        <div align="center">
+            <h1>Login</h1>
+            <label>Usuário:
+                <input type="text" name="username" placeholder="Digite o usuário">
+            </label>
+            <br>
+            <br>
+            <label>Senha:
+                <input type="password" name="senha" placeholder="Digite sua senha">
+            </label>
+            <br>
+            <br>
+            <button type="submit">Entrar</button>
+        </div>
+    </form>
+
+    <div align="center">
+        {% for message in messages %}
+            <strong>Erro: </strong> {{ message }}
+        {% endfor %}
+    </div>
+</body>
+</html>
